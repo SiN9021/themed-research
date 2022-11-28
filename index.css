@@ -1,0 +1,41 @@
+.titlebar{
+    display: table; width: 100%;
+}
+.logo{
+    display: inline-block;
+    display: table-cell;text-align: left;
+}
+.title{
+    display: inline-block;
+    display: table-cell;text-align: right;
+}
+.time{
+    display: inline-block;
+    display: table-cell;text-align: right;
+}
+.lesson{
+
+    display: flex;
+    justify-content: space-evenly;
+    height: 215px;
+}
+
+.reason{
+    width: 40%;
+    height: 186px;
+    text-align: center;
+    
+}
+
+.centered{
+    text-align: left;
+}
+
+.space{
+    height:150px;
+}
+
+.botan{
+    text-align: center;
+}
+
