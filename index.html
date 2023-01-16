@@ -1,154 +1,91 @@
-<head>
-    <link href="index.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-    <meta charset = "UTF-8">
-    <title>大阪ハイテク　公欠届</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.15.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.15.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.15.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-</head>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-<body>
-    <div class="titlebar">
-        <figure class="logo">
-            <img src="ハイテクロゴ1.png">
-        </figure>
-        <div class="title">
-            <h1>公欠届</h1>
-        </div>
-        <div class="time">
-            <script src="index.js"></script>
-        </div>
-    </div> 
-</body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-<p>必要な情報を入力し、公欠届を提出してください。</p>
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
 
-<body>
-<label for="name">&emsp;&emsp;氏名</label>
-<input type="text" id="name" name="name" >
-
-</body>
-
-
-<select name="所属学科">
-    <option>学科名</option>
-    <option>スポーツ科学科        </option>
-    <option>鍼灸スポーツ学科      </option>
-    <option>柔道整復スポーツ学科  </option>
-    <option>柔道整復師学科        </option>
-    <option>人工知能学科          </option>
-    <option>バイオ・再生医療学科  </option>
-    <option>臨床工学技士学科      </option>
-    <option>臨床工学技士専攻科    </option>
-    <option>診療放射線技師学科    </option>
-</select>
-
-<select name="学年">
-    <option>学年</option>
-    <option>1年</option>
-    <option>2年</option>
-    <option>3年</option>
-    <option>4年</option>
-</select>
-
-
-<label for="name">&emsp;番号</label>
-<input type="text" id="name" name="name" >
-
-<input type="radio" id="contactChoice1" name="contact" value="name" />
-<label for="contactChoice1">昼間</label>
-<input type="radio" id="contactChoice2" name="contact" value="name" />
-<label for="contactChoice2">夜間</label>
-
-<div>
-<label for="name">&emsp;担任名</label>
-<input type="text" id="name" name="name" >
-</div>
-
-<div>
-    <label for="name">公欠日時</label>
-    <input type="date">
-</div>
-
-
-<p></p>
-
-<body>
-
-<div class="lesson">
-<table border="1" width="50%">
-    <tr>
-      <th width="10%" align="center">時限</th>
-      <th width="90%" align="center">科目名</th>
-    </tr>
-    <tr>
-      <td align="center">1限</td>
-      <th contenteditable=true></th>
-    </tr>
-    <tr>
-      <td align="center">2限</td>
-      <th contenteditable=true></th>
-    <tr>
-      <td align="center">3限</td>
-      <th contenteditable=true></th>
-    <tr>
-      <td align="center">4限</td>
-      <th contenteditable=true></th>
-    </tr>
-    <tr>
-      <td align="center">5限</td>
-      <th contenteditable=true></th>
-    <tr>
-      <td align="center">6限</td>
-      <th contenteditable=true></th>
-    </tr>
-  </table>
-
-  <div class="reason" style="padding: 10px; margin-bottom: 20px; border: 5px double #333333;">
-   公欠理由
-    <p>&emsp;</p>
-   
-
-    <div class="centered">
-      <input type="radio" id="contactChoice1" name="contact" value="name" />
-      <label for="contactChoice1">1.就職試験</label>
-      <label for="name">&emsp;&emsp;&emsp;会社名</label>
-      <input type="text" id="name" name="name" >
-
-      <br>
-      <input type="radio" id="contactChoice2" name="contact" value="name" />
-      <label for="contactChoice2">2.会社訪問</label>
-      <label for="name">&emsp;&emsp;&emsp;会社名</label>
-      <input type="text" id="name" name="name" >
-      </br>
-
-      <input type="radio" id="contactChoice1" name="contact" value="name" />
-      <label for="contactChoice1">3.忌引</label>
-      <label for="name">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;続柄</label>
-      <input type="text" id="name" name="name" >
-
-      <br>
-      <input type="radio" id="contactChoice2" name="contact" value="name" />
-      <label for="contactChoice2">4.その他</label>
-      <label for="name">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-      <input type="text" id="name" name="name" >
-      </br>
-
-      </div>
-  </div>
-
-
-</div>
-
-<div class="space">
-
-</div>
-
-<div class="botan">
-    <input type="submit" id="btn" name="送信" value="送信"style="width:150px;height:80px;font-size:30px;">
-</div>
-
-</body>
-
-
-
+    
+  </body>
 </html>

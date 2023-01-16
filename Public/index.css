@@ -14,13 +14,14 @@
     display: table-cell;text-align: right;
 }
 .lesson{
-
+    
     display: flex;
     justify-content: space-evenly;
     height: 215px;
 }
 
 .reason{
+    
     width: 40%;
     height: 186px;
     text-align: center;
@@ -35,6 +36,30 @@
     height:150px;
 }
 
-.botan{
+.btn {
+    display: block;
+    margin: auto;
     text-align: center;
-}
+    background: navy;
+    border: 2px solid transparent;
+    color:  #fff;
+    width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+   
+  .btn:focus,
+  .btn:hover {
+    background: #fff;
+    border-color: currentColor;
+    color: navy;
+  }
+   
+   
+
+  @media screen and (min-width:480px) {}
+  @media screen and (min-width:768px) and (max-width:1024px) {}
+  @media screen and (min-width:1024px) {}
+
+ 
